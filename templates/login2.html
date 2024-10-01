@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="static/stylesheet.css">
+        
+
+        <title>SPOTLIGHT-LOGIN</title>
+    </head>
+    <body>
+        <div class="img">
+            
+        </div>
+        <div class="box">
+            <div class="container">
+                <div class="top-header">
+                    <span><marquee><h4><b>Vignan's Institute of Information Technology</b></h4></marquee></span>
+                    <header><b>Login</b></header>
+                </div>
+                <form action="/login" method="post">
+                <div class="input-field">
+                    <input type="text" class="input" name="uname" placeholder="Registration Number" required>
+                    
+                   
+                </div>
+                <br/>
+                <div class="input-field">
+                    <input type="password" class="input" name="pwd" placeholder="Password" required>
+                   
+                </div>
+                <br/>
+                <div class="input-field">
+                    <input type="submit" class="submit" value="Login">
+                    <script>
+                        window.onload = function() {
+                            var alertMessage = "{{ status|default('') }}";
+                            if (alertMessage !== '') {
+                                alert(alertMessage);
+                            }
+                        }
+                    </script>
+                </div>
+                <br/>
+                <div class="input-field">
+                    <a href="/student-signup"><input type="button" class="submit" value="SignUp"></a>
+                    
+                </div>
+                <br/>
+                <div class="wrapper">
+                    <input type="radio" name="select" value="student" id="option-1" checked>
+                    <input type="radio" name="select" value="management" id="option-2">
+                    <label for="option-1" class="option option-1">
+                      <div class="dot"></div>
+                      <span>Student</span>
+                    </label>
+                    <label for="option-2" class="option option-2">
+                      <div class="dot"></div>
+                      <span>Management</span>
+                    </label>
+                </div>
+                </form>  
+                <!-- {% if status!=undefined %}
+                <div class="top-header">
+                    <span><h4 align="center" color="red"><b> {{status}} </b></h4></span>
+                </div>
+                {% endif %}  -->
+            </div>
+        </div>
+    </body>
+</html>

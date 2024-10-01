@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="static/global.css" />
+    <link rel="stylesheet" href="static/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<div class="container">
+				<div class="collapse navbar-collapse" id="navbarsExample07">
+					<ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+							<a class="nav-link" href="/home"><h5><u>Home</u></h5></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/accepted"><h5><u>Accepted</u></h5></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/rejected"><h5><u>Rejected</u></h5></a>
+						</li>
+            <li class="nav-item">
+							<a class="nav-link" href="/completed"><h5><u>Completed</u></h5></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/status"><h5><u>New complaints</u></h5></a>
+						</li>
+          </ul>
+				</div>
+			</div>
+		</nav>
+    <main class="view-page">
+      <div>
+      <form action="/search" method="post">
+        <input type="text" name="complaint_id" placeholder="Search by Complaint ID" />
+        <button type="submit">Search</button>
+      </form>
+      </div>
+      {% if data!=undefined %}
+        {% for i in data %}
+          <div class="complaint">
+            <div class="div">#{{i[0]}} </div>
+            <img
+              class="Image"
+              alt=""
+              src="static/images/{{i[0]}}.jpg"
+              id="img11Image"
+            />
+
+            <div class="subject">
+              <b class="sybject">Subject : </b>
+              <div class="regarding-damaged-black">
+                {{ i[4] }}
+              </div>
+            </div>
+            <div class="discription">
+              <b class="sybject">Description : </b>
+              <div class="regarding-damaged-black">
+                {{ i[5] }}
+              </div>
+            </div>
+            <div class="status">
+              <b class="sybject">Status : </b>
+              <div class="regarding-damaged-black">
+                {% if i[6]=='0' %}
+                  Not Yet Accepted
+                {% else %}
+                  {{i[6]}}
+                {% endif %}
+              </div>
+            </div>
+            <form action="/buttons" method="post">
+            {% if buttons!=0 %}
+              {% if i[6]=='0' %}
+              <div class="buttons">
+                <button class="button" id="acceptButton" onclick="sendData('accepted','{{i[0]}}')" >
+                  <div class="create-account">Accept</div>
+                </button>
+                <button class="button1" id="rejectButton" onclick="sendData('rejected','{{i[0]}}')">
+                  <div class="create-account1">Reject</div>
+                </button>
+              </div>
+              {% elif i[6] == 'accepted' %}
+                <div class="buttons">
+                  <button class="button" id="completedButton" onclick="sendData('completed','{{ i[0] }}')">
+                  <div class="create-account">Completed</div>
+                  </button>
+                  <button class="button1" id="rejectButton" onclick="sendData('rejected','{{i[0]}}')">
+                    <div class="create-account1">Reject</div>
+                  </button>
+                </div>
+              {% endif %}
+            {% endif %}
+            </form>
+          </div>
+          {% endfor %}
+        {% endif %}
+
+
+        
+        <div id="imagePopup" class="popup-overlay" style="display: none">
+          <div class="image">
+            <img class="Image1" id="popupImage" alt="" src="" />
+          </div>
+        </div>
+    </main>
+    <script>
+      function sendData(status, id) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/buttons", true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log("data received");
+            // Parse the response JSON
+            var response = JSON.parse(xhr.responseText);
+            // Check the response status and redirect accordingly
+            if (response.redirect) {
+              window.location.href = response.redirect;
+            }
+          }else{
+            console.error("Error occurred during the request.");
+          }
+        };
+        var data = JSON.stringify({ "status": status, "id": id });
+        xhr.send(data);
+        event.preventDefault();
+      }
+    </script>
+
+    <script>  
+      var img11Image = document.querySelectorAll(".Image");
+      img11Image.forEach(function (Image) {
+        Image.addEventListener("click", function () {
+          var imageSrc = this.src;
+          var popupImage = document.getElementById("popupImage");
+          popupImage.src = imageSrc;
+          var popup = document.getElementById("imagePopup");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(0, 0, 0, 0.29)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+      
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      });
+      </script>
+  </body>
+</html>

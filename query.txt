@@ -1,0 +1,44 @@
+*****LOCALHOST MYSQL QUERIES******
+
+create database spotlight;
+
+use spotlight;
+
+create table student(name varchar(255),
+  reg_no varchar(255),
+  branch varchar(255),
+  mail_id varchar(255),
+  password varchar(255),
+  primary key (reg_no));
+
+create table management(name varchar(255),
+  reg_no varchar(255),
+  branch varchar(255),
+  mail_id varchar(255),
+  password varchar(255),
+  primary key (reg_no));
+
+
+create table complaint(id int(10),
+  name varchar(255),
+  mail varchar(255),
+  reg_no varchar(255),
+  sub varchar(255),
+  disc varchar(255),
+  status varchar(255),
+  primary key(id));
+
+
+NOTE: After creating all the table update username and password for mysql connecter in flask python code.
+
+
+
+
+*****PYTHONANYWHERE MYSQL DETAILS********
+
+mydb = mysql.connector.connect(
+  host="spotlight.mysql.pythonanywhere-services.com",
+  user="spotlight",
+  password="spot@project",
+  database="spotlight$spotlight"
+)

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="static/signupcss.css">
+        <title>spotlight</title>
+    </head>
+    <body>
+    <div class="logo">
+        <img src="static\Vignan_logo.png" width="100" height="100">
+    </div>
+    <div class="box">       
+        <h1>SIGN UP</h1>
+        <form action="/student-signup" method="post">
+        <div class="fieldset">
+                <legend>Enter your details</legend> 
+            <div class="input-field">
+                <p>User Name:</p>
+                <input type="text" class="input" name="name" placeholder="User Name"/><br/>
+            </div>
+            <div class="input-field">
+                <p>Registration number:</p>
+                <input type="text" class="input" name="uname" placeholder="Roll number"/><br/>
+            </div>
+            <div class="input-field">
+                <p>Branch:</p>
+                <input type="text" class="input" name="branch" placeholder="Branch"/><br/>
+            </div>
+            <div class="input-field">
+                <p>Mail:</p>
+                <input type="text" class="input" name="Mail" placeholder="Enter your Mail"/><br/>
+            </div>
+            <div class="input-field">
+                <p>Set Password:</p>
+                <input type="password" class="input" name="pwd" placeholder="Enter password"/><br/>
+            </div>
+            <div class="input-field">
+                <p> Confirm Password:</p>
+                <input type="password" class="input" name="cpwd" placeholder="Confirm password"/><br/>
+            </div>
+                <p></p>
+                <input type="submit" class="submit" name="signup" value="signup"></a>
+                <script>
+                    window.onload = function() {
+                        var alertMessage = "{{ status|default('') }}";
+                        if (alertMessage !== '') {
+                            alert(alertMessage);
+                        }
+                    }
+                </script>
+
+                <!-- {% if status!=undefined %}
+                <div class="top-header">
+                    <span><h4 align="center" color="red"><b> {{status}} </b></h4></span>
+                </div>
+            {% endif %} -->
+        </div>
+    </div>
+        </form>
+    </div>     
+    </body>
+</html>

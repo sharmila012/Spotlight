@@ -1,0 +1,160 @@
+body {
+	min-height: 75rem;
+	padding-top: 3.5rem;
+	opacity: 2.5PX;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+html{
+	 scroll-behavior:smooth;
+}
+.link{
+	top: -120px;
+	position: relative;
+	z-index: 5;
+}
+.descr-top{
+	background: url('../imagem/topo.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #e1f4f8;
+	background-size: cover;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	color: #021c29;
+	border-radius: 0px;
+}
+.servicos{
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background-color: #e1f4f8;
+	border-radius: 0px;
+	margin-bottom: 0rem !important
+}
+.circulo{
+	width:  140px;
+	height: 140px;
+	
+	font-size: 52px;
+	padding-top: 24px; 
+	color: #211df7;
+}
+.circulo:hover{
+	background-color: #124760;
+	color: #b7c2dc;
+}
+.centralizar{
+	margin: 0 auto !important;
+	float: none !important;
+}
+.descr-chamada{
+	background-image: url("../imagem/chamada_acao.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #e1f4f8;
+	background-size: cover;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	color: #166bb6;
+	margin-bottom: 0rem !important;
+	border-radius: 0rem; 
+}
+.contacto{
+	background-color: #e1f4f8;
+	padding-top:  80px;
+	padding-bottom: 80px;
+	margin-bottom: 0rem !important;
+	border-radius: 0rem;
+}
+.rodape{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background-color: #15263a;
+	margin-bottom: 0rem !important;
+	color: #fff;
+	border-radius: 0rem;
+}
+.rodape ul li a.link-rodape{
+	color: #ffffff !important;
+}.rodape ul li a.link-rodape:hover{
+	color: #f7941d !important;
+	text-decoration: #fff;
+}
+.social-menu ul{
+    position:absolute;
+    top:40%;
+    left:40%;
+    padding: 0;
+    margin: 0;
+    transform:translate(-5%, -5%);
+    display:flex;
+}
+.social-menu ul li{
+    list-style:none;
+    margin:0 15px;
+}
+.social-menu ul li .fa{
+    font-size:30px;
+    line-height:40px;
+    transition:.6s;
+    -webkit-transition:.6s;
+    color:#000;
+}
+.social-menu ul li .fa:hover{
+    color:#fff;
+}
+.social-menu ul li a{
+    position:relative ;
+    display:block;
+    height:40px;
+    width:40px;
+    border-radius:40px;
+    background-color:#fff;
+    text-align:center;
+    transition:.6s;
+    -webkit-transition:.6s;
+    box-shadow:0 5px 4px grey;
+}
+.social-menu ul li a:hover{
+    transform:translate(0, -10px);
+}
+
+.social-menu ul li:nth-child(1) a:hover{
+    background-color:#3b5999;
+}
+
+.social-menu ul li:nth-child(2) a:hover{
+    background-color:#55acee;
+}
+.social-menu ul li:nth-child(3) a:hover{
+    background-color:#e4405f;
+}
+
+.social-menu ul li:nth-child(4) a:hover{
+    background-color:yellow;
+}
+.social-menu ul li:nth-child(5) a:hover{
+    background-color:rgb(48, 11, 194);
+}
+.social-menu ul li:nth-child(6) a:hover{
+    background-color:rgb(241, 54, 7);
+}
+
+.form-control{
+	border-radius: 20px;
+
+}
+.form-group{
+	position:relative;
+	right:260px;
+}
+.post{
+	position: relative;
+	right: 20px;
+
+}
+.follow{
+	align-items: center;
+	position: relative;
+	left: 40%;
+}

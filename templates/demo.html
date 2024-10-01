@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang= "pt"> 
+	<head>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<link rel="stylesheet" href="static/style2.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+
+		<title>SPOT LIGHT</title>
+	 </head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<div class="container">
+				<a class="navbar-brand" href="https://vignaniit.edu.in/">VIIT</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarsExample07">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#Home"><h5><u>Home</u></h5></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#Complaint"><h5><u>Complaint</u></h5></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#Moto"><h5><u>About</u></h5></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#Contact Us"><h5><u>Contact Us</u></h5></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/status"><h5><u>Status</u></h5></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#Contact Us"><h5><u>Help</u></h5></a>
+						</li>
+						
+                        <li class="nav-item">
+							<a class="nav-link" href="/logout"><h5><u>Logout</u></h5></a>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="jumbotron text-center descr-top">
+			<h2><a name="Home" class="link"></a></h2>
+			<div class="container">
+				<h1 class="display-4 mb-4">WELCOME TO VIIT SPOT LIGHT</h1>
+				<p class="lead mb-4">Feel free to complaint.</p>
+				<p>
+					<a href="#Complaint" class="btn btn-primary btn-lg">Complaint ?</a>
+				</p>
+			</div>
+		</div>
+		<div class="jumbotron servicos">
+			<div class="container text-center">
+				<h2 class="display-4">Spot Light</h2>
+				<p class="lead pb-4">Our moto is to see a problem free campus</p>
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="rounded-circle circulo centralizar shadow border border-warning">
+							<i class="fas fa-hammer"></i>
+						</div>
+						<h2 class="mt-4 mb-4">Post a Complaint</h2>
+						<p> Post a valid Complaint</p>
+					</div>
+					<div class="col-lg-4">
+						<div class="rounded-circle circulo centralizar shadow border border-warning">
+							<i class="fas fa-drafting-compass"></i>
+						</div>
+						<h2 class="mt-4 mb-4">Analysing the problem</h2>
+						<p>We will analyse the problem</p>
+					</div>
+					<div class="col-lg-4">
+						<div class="rounded-circle circulo centralizar shadow border border-warning">
+							<i class="fas fa-paint-roller"></i>
+						</div>
+						<h2 class="mt-4 mb-4">Resolved</h2>
+						<p></p>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class="jumbotron descr-chamada">
+			<h2><a name="Moto" class="link"></a></h2>
+			<div class="container text-center">
+				<h1>ABOUT : </h1>
+				<h4>The main objective of our system is to make <br>
+					complaints easier to coordinate, monitor, track<br>
+					 and resolve, and to provide college management <br>
+					 with effective tool to keep records of complaint <br>
+					 data, to use data for identifying problem areas <br>
+					 and to improve service. </h4>
+				<b><p class="lead mb-4"><h1>HAVE A GOOD DAY</h1></p></b>
+				<a href="#Complaint" class="btn btn-outline-primary btn-lg">Complaint ?</a>
+			</div>
+		</div>
+		<div class="jumbotron contacto">
+			<h2><a name="Complaint" class="link"></a></h2>
+			<div class="container">
+				<h2 class="display-4 mb-4 text-center">Complaint</h2>
+				<div class="row">
+					<div class="col-lg-6">
+					
+						
+                        
+					</div>
+					<div class="col-lg-6">
+                        <h2><a name="Complaint" class="link" id="Complaint"></a></h2>
+						<form action="/home" method="post" enctype="multipart/form-data" >
+							<div class="form-group">
+								<label for="nome">Name</label>
+								<input type="text" name="Name" value="{{name}}" class="form-control" id="nome" placeholder="Complete Name" required>
+							</div>
+							<div class="form-group">
+								<label for="email">E-mail</label>
+								<input type="email" name="email" value="{{mail}}" class="form-control" id="email" placeholder="E-mail" required>
+							</div>
+                            <div class="form-group">
+								<label for="Reg.Number">Register Number</label>
+								<input type="text" name="Reg_no" value="{{reg_no}}" class="form-control" id="Reg.Number" placeholder="Reg.Number" required>
+							</div>
+							<div class="form-group">
+								<label for="assunto">Subject</label>
+								<input type="text" name="sub" class="form-control" id="assunto" placeholder="SUbject" required>
+							</div>
+                            <div class="form-group">
+								<label for="assunto">Upload image</label>
+								<input type="file" name="img" class="form-control" id="upload" placeholder="Upload image" required>
+							</div>
+							<div class="form-group">
+								<label for="conteudo">Description</label>
+								<textarea name="disc" class="form-control" id="conteudo" placeholder="Description" required></textarea>
+							</div>
+                            <div class="post">
+								<button type="submit">Post</button>
+								<script>
+									window.onload = function() {
+										var alertMessage = "{{ status|default('') }}";
+										if (alertMessage !== '') {
+											alert(alertMessage);
+										}
+									}
+								</script>
+							</div>
+						</form>
+					</div>			
+				</div>
+			</div>
+		</div>
+		<div class="jumbotron rodape">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-4">
+						<h5>User Policy</h5>
+						<ul class="list-unstyled">
+							<li>
+								<a href="#" class="link-rodape">Terms</a>
+							</li>
+							<li>
+								<a href="#" class="link-rodape">Privacy Policy</a>
+							</li>
+							
+							
+						</ul>
+					</div>
+					<div class="col-12 col-sm-12 col-md-4">
+                        <h2><a name="Contact Us" class="link1" id="Contact Us"></a></h2>
+						<h5>Contact Us</h5>
+						<ul class="list-unstyled">
+							<li>
+								<a href="tel: +916300918545" class="link-rodape">(+91) 6300918545</a>
+							</li>
+							<li>
+								<a href="arnooripraveen111@gmail.com" class="link-rodape">arnooripraveen111@gmail.com</a>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="col-12 col-sm-12 col-md-4">
+						<div class="follow">
+                            <h5>Follow US On</h5>
+						</div>
+                            <div class="social-menu">
+                                <ul>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100037528726456"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://www.instagram.com/_nani_955/?next=%2F"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-snapchat"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+									<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+
+
+                                </ul>
+							</div>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		
+	</body>
+</html>

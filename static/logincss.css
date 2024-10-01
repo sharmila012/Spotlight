@@ -1,0 +1,192 @@
+
+
+
+
+* {
+	margin: 0; padding: 0; /* Remove margins and paddings on elements */
+	box-sizing: border-box; /* Generate paddings inside elements */ 
+	-webkit-user-select: none; /* Chrome, Safari, Android and iOS */
+	   -moz-user-select: none; /* Firefox */
+		-ms-user-select: none; /* Internet Explorer */
+			user-select: none; /* Disables text selection */
+}
+body {
+	font: 1em Arial;
+}
+input {
+	position: relative; /* Element will be relatively positioned on its parent */
+	height: 35px; width: 100%;
+	margin: 10px 0; padding: 5px 15px;
+	border: 1px solid #BBB; border-radius: 4px;
+	font: 0.8em Arial;
+	color: #555;
+	background: #FFF;
+	display: block; /* Input always start on new line */
+	transition: all 150ms linear;
+}
+input:focus {
+	outline: none;
+	border-color: Steelblue ;
+	box-shadow: 0 0 0 4px Lightsteelblue;
+}
+button {
+	position: relative;
+	height: 35px;
+	left: 0; right: 0; /* Both left and right set to 0 to horizontally center element */
+	margin: 0 auto; padding: 5px 10px; /* Margin's horizontal position set to 0 to center element */
+	border: 0;
+	font: 0.8em Arial;
+	transition: all 150ms linear; /* Put animation on the button */
+	cursor: pointer; /* Changes the cursor into a pointing hand on PCs  */
+	-webkit-tap-highlight-color: transparent; /* Removes the blue highlight when button tapped on mobile */
+}
+button:focus {
+	outline: none;
+}
+.wrapper {
+	position: absolute;
+	height: 100vh; width: 100vw;
+	top: 0; left: 0; /* Making sure that the wrapper will not create unusual space by default */
+	background: #CCC;
+	overflow: auto; /* Auto show scroll bar if the content overflows */
+}
+.form {
+	position: relative;
+	width: 70%;
+	left: 0; right: 0;
+	margin: 20px auto;
+	background: #DDD;
+	box-shadow: 1px 1px 5px 0 #777;
+}
+.btn-login {
+	color: #777;
+	background: #EEE;
+}
+.btn-login:hover {
+	background: #DDD;
+}
+.btn-signup {
+	color: #FFF;
+	background: Indianred;
+}
+.btn-signup:hover {
+	background: #C33C3C;
+}
+.btn-login, .btn-signup {
+	width: 50%;
+	text-transform: uppercase; /* Transforms texts into uppercase */
+	display: inline-block; /* Used to inline block elements */
+}
+.btn-signup {
+	float: right; /* Makes element float/move to right */
+}
+.form-body {
+	position: relative;
+	max-height: 600px;
+	padding: 0 40px;
+	background: #EEE;
+	transition: max-height 500ms linear;
+	overflow: hidden;
+}
+.login-container {
+	position: relative;
+}
+.logo-container {
+	position: relative;
+	height: 80px; width: 80px;
+	left: 0; right: 0;
+	margin: 15px auto 10px auto;
+	border-radius: 50%;
+	background: Indianred;
+	box-shadow: 0 0 5px 0 #555;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+}
+.logo {
+	position: absolute;
+	height: 15px; width: 30px;
+	top: 50%; left: 0; right: 0;
+	margin: 0 auto;
+	border-radius: 15px 15px 2px 2px;
+	background: #EEE;
+}
+.logo:before {
+	position: absolute;
+	content: '';
+	height: 15px; width: 15px;
+	top: -18px; left: 0; right: 0;
+	margin: 0 auto;
+	border-radius: 50%;
+	background: #EEE;
+}
+.login-title, .signup-title {
+	position: relative;
+	margin: 20px 0;
+	font: 1.2em Arial;
+	color: #777;
+	text-align: center;
+	text-transform: uppercase;
+}
+.signup-title {
+	color: #EEE;
+}
+.btn-submit {
+	width: 100%;
+	margin: 0 0 20px 0;
+	color: #FFF;
+	border-radius: 4px;
+	background: Indianred;
+}
+.btn-submit:hover {
+	background: #C33C3C;
+}
+.signup-container {
+	position: relative;
+	display: none;
+}
+.signup-container .logo-container {
+	background: #EEE;
+}
+.signup-container .logo, .signup-container .logo:before {
+	background: Indianred;
+}
+.txtbox-firstname {
+	float: left;
+}
+.txtbox-lastname {
+	float: right;
+}
+.txtbox-firstname, .txtbox-lastname {
+	width: 49%;
+}
+.signup-container input {
+	background: #EEE;
+}
+.signup-container input:focus {
+	box-shadow: none;
+}
+.btn-register {
+	width: 100%;
+	margin: 0 0 15px 0;
+	color: #EEE;
+	border-radius: 4px;
+	background: Mediumseagreen;
+}
+.hide {
+	max-height: 0;
+}
+
+@media screen and (max-width: 450px) { /* Smaller screens makes form larger */
+	.form {
+		width: 90%;
+	}
+	.form-body {
+		padding: 0 15px;
+	}
+}
+
+@media screen and (min-width: 700px) { /* Larger screens makes form smaller */
+	.form {
+		width: 50%;
+	}
+}

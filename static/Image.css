@@ -1,0 +1,25 @@
+.Image1 {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.image {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
